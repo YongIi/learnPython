@@ -15,7 +15,7 @@ dict(name = 'jack', age = 20)
 scores = {"张三": 100, "李四": 98}
 print(scores, type(scores))
 
-stud = dict(name="jack", age=28)  # name和age是什么数据类型的？键都是字符串！？
+stud = dict(name="jack", age=28)  # name和age是什么数据类型的？键都是字符串！？ 且定义字典时，不带引号的键只能在dict()中，不能用在{}定义时
 print(stud, type(stud))
 
 # 空字典

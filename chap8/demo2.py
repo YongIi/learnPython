@@ -30,7 +30,7 @@ print(t11, type(t11))
 t111 = ("Python",)  # 如果元组中只有一个元素，逗号不能省略
 print(t111, type(t111))
 
-t2 = tuple(("Python", "hello", 90))
+t2 = tuple(("Python", "hello", 90))  # tuple()内部要带上元组的小括号()
 print(t2, type(t2))
 
 

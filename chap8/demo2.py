@@ -49,5 +49,3 @@ d2 = dict()  # 内置函数依旧用小括号
 print("空元组：", t, t2)
 print("空列表：", lst, lst1)
 print("空字典：", d, d2)
-
-

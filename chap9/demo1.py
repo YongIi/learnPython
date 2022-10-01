@@ -76,6 +76,7 @@ a = -6
 b = -6
 a is b
 
+# 强制驻留
 # sys中的intern方法强制2个相同字符串指向同一个对象，避免内存浪费
 import  sys
 s1 = "abc%"

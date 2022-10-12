@@ -9,9 +9,13 @@
 语法：
 实例名 = 类名()  # 用类名()创建一个对象，由实例名指向该对象
 
+在创建类时，类名是类对象；在创建对象时，类名()是实例对象，该实例对象由实例名指向。
+如何知道该实例对象是属于某个类对象的呢？实例对象中有个类指针指向了该类对象，具体的数据结构看图《类对象和实例对象.png》
+
 """
 
 
+# 创建类
 # 将上节课定义的类复制过来
 
 class Student:  # Student为类名，类名可以由一个或者多个单词组成，每个单词的首字母大写，其余小写（就是驼峰写法）
@@ -27,8 +31,7 @@ class Student:  # Student为类名，类名可以由一个或者多个单词组�
     def method():  # 在静态方法中不允许使用self
         print("使用了staticmethod修饰，是静态方法")
 
-        # 类方法
-
+    # 类方法
     @classmethod
     def cm(cls):
         print("使用了classmethod修饰，是类方法")
@@ -40,3 +43,20 @@ class Student:  # Student为类名，类名可以由一个或者多个单词组�
 
 # 创建对象
 stu1 = Student("张三", 20)  # 用类名()创建一个对象，由实例名指向该对象
+print(id(stu1))
+print(type(stu1))  # <class '__main__.Student'> Student类型
+print(stu1)  # <__main__.Student object at 0x0000022451790910> 就是id(stu1)地址的十六进制位置上的Student对象
+
+print("--------")
+
+print(id(Student))
+print(type(Student))
+print(Student)
+
+# 使用对象
+stu1.eat()  # 此处调用实例方法（函数）不需要为self传递对象，self就是指向stu1对象本身  # 对象名.函数名()
+print(stu1.name)
+print(stu1.age)
+print("-----直接使用类名来访问类中的函数-----")
+Student.eat(stu1)  # 此时需要为形参else指定实例对象，61行代码与57行代码的功能是相同的，都是调用Student类中的eat()函数  # 类名.函数名(对象名)
+

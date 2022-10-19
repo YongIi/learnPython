@@ -28,5 +28,7 @@ print("--------我是分割线--------")
 # 创建对象时，会先调用__new__方法创建对象（同时指定对象的类型），再调用__init__方法初始化对象
 p1 = Person("张三", 20)  # 先执行赋值符=右侧的代码，会先把类对象Person传给__new__方法中的cls，创建对象并指定对象的类型，再调用__init__方法
 # 相对于
-p = object.__new__(Person)  # 此时不能初始化
+p = object.__new__(Person)  # 此时只是创建对象，指定类型为Person，再要通过Person.__init__(p, "张三", 20)初始化对象
+Person.__init__(p, "张三", 20)
+print(p.name, p.age)
 print("p1是这个Person类的实例对象，其id是{0}".format(id(p1)))
